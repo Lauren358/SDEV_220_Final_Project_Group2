@@ -1,0 +1,16 @@
+{% extends 'foodbank/post_list.html' %}
+{% block content %}
+        <table class="item_table">
+            <tr>
+                <th>Name</th>
+                <th>Total</th>
+            </tr>
+            <tr><br></tr>
+            {% for i in food_list %}
+            <tr>
+                <td>{{ i.food_name }}</td>
+                <td>{{ i.food_total }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+{% endblock %}
