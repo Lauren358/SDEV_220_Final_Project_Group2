@@ -1,43 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Lobster&display=swap');
-
-table{
-    font-family: "Exo", sans-serif;
-    width: 30%;
-}
-
-th{
-    background-color: rgb(23, 23, 109);
+/* Top Bar */
+.top-bar {
+    background-color: #2e5e3a;
     color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-td,th{
-    padding: 10px;
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Lobster', cursive;
 }
 
-.item_table tr:nth-child(even){
-    background-color: rgb(23, 23, 109);
+.top-bar h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.logout {
     color: white;
-}
-
-.item_table tr:nth-child(odd){
-    background-color: rgb(65, 72, 139);
-    color: white;
-}
-
-.page-header{
-    margin-top: 0;
-    margin-bottom: 40px;
-    padding: 20px 20px 20px 40px;
-}
-
-.page-header h1{
-    float: left;
-    font-size: 30pt;
     text-decoration: none;
+    font-size: 14px;
+
 }
 
-.top-menu{
-    float: right;
-    font-size: 20pt;
-    margin-right: 20px;
+/* Main Content */
+.container {
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
 }
+
+.container h2 {
+    color:#2e5e3a;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color:#2e5e3a;
+}
+
+.card p {
+    margin-top: 0;
+    color: #555;
+}
+
+.card:hover {
+    background-color: #f0f5f0;
+}
+

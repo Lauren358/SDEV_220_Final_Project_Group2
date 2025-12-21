@@ -1,12 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 from .models import Inventory
 from .forms import DonoForm
+from foodbank import models
 
 # Create your views here.
 
 def post_list(request):
     return render(request, 'foodbank/post_list.html', {})
+
 
 def pantry_list(request):
     all_foods = Inventory.objects.all()
