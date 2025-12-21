@@ -1,22 +1,28 @@
 /* Top Bar */
 .top-bar {
-    background-color: #2e5e3a;
+    
     color: white;
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 24px;
     font-family: 'Lobster', cursive;
 }
 
-.top-bar h1 {
-    font-size: 20px;
-    margin: 0;
+
+
+h1 {
+    background-color: #2e5e3a;
+    color: white;
+    font-size: 24px;
+    font-family: 'Lobster', cursive;
+    display: flex;
+    justify-content: space between;
+    align-items:flex-start;
+    text-decoration: none;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+
 }
 
 .logout {
