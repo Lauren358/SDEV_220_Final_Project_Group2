@@ -8,5 +8,5 @@ class DonoForm(forms.ModelForm):
 
 class TakeForm(forms.ModelForm):
     class Meta:
-        model = Take
+        model = Inventory
         fields = ['name', 'food_name','food_total']
