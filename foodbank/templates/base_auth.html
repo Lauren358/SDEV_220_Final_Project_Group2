@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Authentication{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f7f7f4;
+    }
+
+    .login-container {
+        background: white;
+        width: 320px;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 6 20px rgba(0,0,0,0.1);
+        text-align: center;
+        margin: 80px auto;
+    }
+
+    h1 {
+        margin-bottom: 5px;
+        color: #2e5e3a;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 25px;
+        color: #666;
+    }
+
+    label {
+        display: block;
+        text-align: left;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .login-container {
+    text-align: center;
+    }
+
+    .login-container form {
+        text-align: left;
+    }
+
+
+    button {
+        
+    padding: 12px 18px;
+    margin-top: 25px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+
+    /* RIGHT ALIGN */
+    display: block;
+    margin-left: auto;
+    
+    }
+
+    button:hover {
+        background-color: #449d48;
+    }
+    
+</style>
+
+    <link rel="stylesheet" href="{% static 'css/foodbank.css' %}">
+</head>
+<body class="auth-body">
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
