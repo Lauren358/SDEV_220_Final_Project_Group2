@@ -1,9 +1,13 @@
 from django.shortcuts import render, get_object_or_404
-from django.shortcuts import redirect
+from django.shortcuts import redirect 
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy 
 from .models import Inventory
 from .forms import DonoForm
-from foodbank import models
+from django.contrib.auth.forms import UserCreationForm
+from foodbank import models 
+from django.views.generic import CreateView
+
 
 # Create your views here.
 
@@ -33,3 +37,11 @@ def donation(request):
     else:
         form = DonoForm()
         return render(request, 'foodbank/donation.html', {'form':form})
+    
+
+class SignUpView(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'
+
+

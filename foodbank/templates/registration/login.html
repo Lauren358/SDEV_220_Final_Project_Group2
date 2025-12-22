@@ -1,110 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pantry Track | Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base_auth.html" %}
 
-    <style>
-        body {
-            font-family:Arial, Helvetica, sans-serif;
-            background-color: #f7f7f4;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;                  
-        }
+{% block title %}Login | Pantry Track{% endblock %}
 
-        .login-container {
-            background: white;
-            width: 320px;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 6 20px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+{% block content %}
 
-        h1 {
-            margin-bottom: 5px;
-            color: #2e5e3a;
-        }
 
-        .subtitle {
-            font-size: 14px;
-            margin-bottom: 25px;
-            color: #666;
-        }
+<div class="login-container">
+    <h1>Pantry Track</h1>
+    <div class="subtitle">Food Pantry Inventory System</div>
 
-        label {
-            display: block;
-            text-align: left;
-            margin-top: 15px;
-            font-size: 14px;
-        } 
+    {% if form.errors %}
+        <p style="color:red;">Invalid username or password.</p>
+    {% endif %}
 
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+    <form method="post">
+        {% csrf_token %}
 
-        input:focus {
-            border-color: #4caf50;
-            outline: none;
-        }
+        <label for="id_username">Username</label>
+        <input type="text" name="username" id="id_username" required>
 
-        button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 25px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+        <label for="id_password">Password</label>
+        <input type="password" name="password" id="id_password" required>
 
-        button:hover {
-            background-color: #449d48;
-        }
+        <button type="submit">Log in</button>
+    </form>
 
-        .forgot {
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        .forgot a {
-            color: #4caf50;
-            text-decoration: none;
-        }
-
-        .forgot a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h1>Pantry Track</h1>
-        <div class="subtitle">Food Pantry Inventory System</div>
-
-        <form>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Login</button>
-        </form>
-        <div class="forgot">
-            <a href="#">Forgot Password?</a>
-        </div>
-    </div>
-</body>
-</html>
+    <a href="{% url 'signup' %}">Sign Up</a>
+    <p style="margin-top:20px;">Need an account?</p>
+</div>
+{% endblock %}
