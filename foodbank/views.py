@@ -7,7 +7,8 @@ from .forms import DonoForm
 from django.contrib.auth.forms import UserCreationForm
 from foodbank import models 
 from django.views.generic import CreateView
-
+from .forms import TakeForm
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -38,7 +39,7 @@ def donation(request):
         form = DonoForm()
         return render(request, 'foodbank/donation.html', {'form':form})
     
-
+   
 class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
