@@ -7,7 +7,6 @@ from .forms import DonoForm
 from django.contrib.auth.forms import UserCreationForm
 from foodbank import models 
 from django.views.generic import CreateView
-from .forms import TakeForm
 from django.http import HttpResponse
 
 # Create your views here.
