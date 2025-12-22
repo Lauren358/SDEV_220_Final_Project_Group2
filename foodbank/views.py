@@ -7,7 +7,8 @@ from .forms import DonoForm
 from django.contrib.auth.forms import UserCreationForm
 from foodbank import models 
 from django.views.generic import CreateView
-
+from .forms import TakeForm
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -38,6 +39,29 @@ def donation(request):
         form = DonoForm()
         return render(request, 'foodbank/donation.html', {'form':form})
     
+    def take(request):
+    if request.method == "POST":
+        form = TakeForm(request.POST)
+        if form.is_valid():
+            take = form.save(commit=False)
+            take.save()
+            return redirect('pantry_list')
+    else:
+        form = TakeForm()
+        return render(request, 'foodbank/take_donation.html', {'form':form})
+
+
+def food_taken(self, food_name, food_total):
+        if food_total > 0:
+            take = Take.objects.create(name=self.request.user, food_name=food_name, food_total=food_total)
+            take.save()
+            food_total = food_total - food_total
+            food_total.save()
+            return HttpResponse("Food taken successfully!")
+        else:
+            return HttpResponse("None available at this time, please try again later.")
+
+
 
 class SignUpView(CreateView):
     form_class = UserCreationForm
